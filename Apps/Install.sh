@@ -47,11 +47,11 @@ rm -rf /Applications/Spotify.app
 echo "Configuring Dock..."
 
 defaults delete com.apple.dock; killall Dock
-sleep 5
+sleep 6
 defaults delete com.apple.dock persistent-apps; killall Dock
-sleep 5
+sleep 6
 defaults write com.apple.dock show-recents -bool FALSE; killall Dock
-sleep 5
+sleep 6
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$systemAppsFolder/Launchpad.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 
 # Google Chrome
