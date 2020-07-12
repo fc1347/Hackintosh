@@ -31,52 +31,6 @@ rm -rf /Applications/The\ Unarchiver.app
 rm -rf /Applications/Docker.app
 rm -rf /Applications/Spotify.app
 
-# Nodejs
-
-echo "Downloading and installing NVM..."
-
-curl -o ./dl/nvm_install.sh https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh 1&>/dev/null
-bash ./dl/nvm_install.sh 1&>/dev/null
-
-cat << EOF >> ~/.bash_profile
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-EOF
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-echo "Installinsg NodeJS with NVM..."
-
-nvm install node 1&>/dev/null
-nvm install 12.13.1 1&>/dev/null
-nvm alias default 12.13.1 1&>/dev/null
-
-# .vimrc
-
-echo "Writing .vimrc..."
-
-rm ~/.vimrc
-
-cat << EOF >> ~/.vimrc
-set nu
-set mouse=a
-syn on
-EOF
-
-# VSCode
-
-echo "Installing VSCode..."
-
-unzip -qq ./vscode/VSCode-darwin-stable.zip -d /Applications/
-
-mkdir -p ~/Library/Application\ Support/Code/User
-cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-
-cat << EOF >> ~/.bash_profile
-export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-EOF
-
 # Google Chrome
 
 echo "Downloading and installing Google Chrome..."
@@ -86,6 +40,22 @@ curl -L https://dl.google.com/chrome/mac/stable/GGRO/googlechrome.dmg -o ./dl/go
 hdiutil attach ./dl/googlechrome.dmg -quiet
 cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications
 hdiutil detach /Volumes/Google\ Chrome -quiet
+
+
+# VSCode
+
+echo "Downloading and installing VSCode..."
+
+curl -L https://go.microsoft.com/fwlink/?LinkID=620882 -o ./dl/VSCode-darwin-stable.zip 1&>/dev/null
+
+unzip -qq ./vscode/VSCode-darwin-stable.zip -d /Applications/
+
+mkdir -p ~/Library/Application\ Support/Code/User
+cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+cat << EOF >> ~/.bash_profile
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+EOF
 
 # iTerm2
 
@@ -180,6 +150,39 @@ while [[ $(pgrep Install\ Spotify) ]]
 do
 sleep 1
 done
+
+# Nodejs
+
+echo "Downloading and installing NVM..."
+
+curl -o ./dl/nvm_install.sh https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh 1&>/dev/null
+bash ./dl/nvm_install.sh 1&>/dev/null
+
+cat << EOF >> ~/.bash_profile
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+EOF
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+echo "Installinsg NodeJS with NVM..."
+
+nvm install node 1&>/dev/null
+nvm install 12.13.1 1&>/dev/null
+nvm alias default 12.13.1 1&>/dev/null
+
+# .vimrc
+
+echo "Writing .vimrc..."
+
+rm ~/.vimrc
+
+cat << EOF >> ~/.vimrc
+set nu
+set mouse=a
+syn on
+EOF
 
 # Tor
 # VLC
