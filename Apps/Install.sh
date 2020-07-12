@@ -3,7 +3,18 @@
 rm -rf ./dl
 mkdir ./dl
 
-rm ~/.bash_profile
+macOSVersion=$(sw_vers -productVersion)
+
+if [[ $macOSVersion =~ "10.15" ]]
+then
+	profile="$HOME/.zprofile"
+	systemAppsFolder="/System/Applications"
+else
+	profile="$HOME/.bash_profile"
+	systemAppsFolder="/Applications"
+fi
+
+rm $profile 2&>/dev/null
 
 # Remove current apps
 
@@ -41,7 +52,7 @@ defaults delete com.apple.dock persistent-apps; killall Dock
 sleep 5
 defaults write com.apple.dock show-recents -bool FALSE; killall Dock
 sleep 5
-defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Launchpad.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$systemAppsFolder/Launchpad.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 
 # Google Chrome
 
@@ -103,12 +114,12 @@ echo "Downloading and installing VSCode..."
 
 curl -L https://go.microsoft.com/fwlink/?LinkID=620882 -o ./dl/VSCode-darwin-stable.zip 1&>/dev/null
 
-unzip -qq ./vscode/VSCode-darwin-stable.zip -d /Applications/
+unzip -qq ./dl/VSCode-darwin-stable.zip -d /Applications/
 
 mkdir -p ~/Library/Application\ Support/Code/User
 cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
-cat << EOF >> ~/.bash_profile
+cat << EOF >> $profile
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 EOF
 
@@ -181,7 +192,7 @@ echo "Downloading and installing NVM..."
 curl -o ./dl/nvm_install.sh https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh 1&>/dev/null
 bash ./dl/nvm_install.sh 1&>/dev/null
 
-cat << EOF >> ~/.bash_profile
+cat << EOF >> $profile
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 EOF
@@ -210,7 +221,7 @@ EOF
 # Tor
 # VLC
 
-# Add apps do Dock
+defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$systemAppsFolder/System Preferences.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 
 echo "Restarting Dock..."
 
