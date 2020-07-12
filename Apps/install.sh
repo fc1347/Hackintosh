@@ -60,8 +60,8 @@ hdiutil detach /Volumes/Steam
 
 # iTerm2
 
-curl -L https://iterm2.com/downloads/stable/latest -o ./dl/iterm2.zip
-unzip ./dl/iterm2.zip -d /Applications
+curl -L https://iterm2.com/downloads/stable/latest -o ./dl/iTerm2.zip
+unzip ./dl/iTerm2.zip -d /Applications
 
 # eqMac2
 
