@@ -1,0 +1,2 @@
+Copy from 10.14.6
+Added -disablegfxfirmware and removed "unused?" arguments because Clover doesn't seems to handle that much arguments
