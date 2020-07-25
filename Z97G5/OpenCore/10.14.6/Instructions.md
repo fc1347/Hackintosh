@@ -8,3 +8,4 @@ https://github.com/khronokernel/Getting-Started-With-OpenCore/blob/master/OpenCo
 # Uploader sur config.plist et suivre les instructions sur OpenCore Sanity Checker
 https://opencore.slowgeek.com/
 # Retirer l'argument -v dans NVRAM -> Add -> boot-args
+# Compiler et ajouter Spoof-SSDT.aml de Dortania pour désactiver le gpu si sur PCI0

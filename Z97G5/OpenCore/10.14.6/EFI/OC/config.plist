@@ -8,6 +8,14 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>Spoof-SSDT.aml</string>
+				<key>Path</key>
+				<string>Spoof-SSDT.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>SSDT-EC.aml</string>
 				<key>Path</key>
 				<string>SSDT-EC.aml</string>
@@ -199,17 +207,7 @@
 	<key>DeviceProperties</key>
 	<dict>
 		<key>Add</key>
-		<dict>
-			<key>PciRoot(0x0)/Pci(0x1,0x1)</key>
-			<dict>
-				<key>name</key>
-				<data>I2Rpc3BsYXk=</data>
-				<key>IOName</key>
-				<string>#display</string>
-				<key>class-code	</key>
-				<data>/////w==</data>
-			</dict>
-		</dict>
+		<dict/>
 		<key>Delete</key>
 		<dict/>
 	</dict>
@@ -528,7 +526,7 @@
 		<key>Debug</key>
 		<dict>
 			<key>AppleDebug</key>
-			<false/>
+			<true/>
 			<key>ApplePanic</key>
 			<true/>
 			<key>DisableWatchDog</key>
@@ -838,17 +836,17 @@
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string>D25537609J9F8YLJA</string>
+			<string>D25551401GUF9RR1M</string>
 			<key>ROM</key>
 			<data>ESIzRFVm</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
-			<string>iMac14,2</string>
+			<string>iMac14,3</string>
 			<key>SystemSerialNumber</key>
-			<string>D25QDPZ3F8JC</string>
+			<string>D25QVZZ4F8J3</string>
 			<key>SystemUUID</key>
-			<string>C7EC9E8D-D2F7-4FA9-86E9-49FA9FA545F9</string>
+			<string>7505783E-6D23-4F7E-A769-E12DC7293E24</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
