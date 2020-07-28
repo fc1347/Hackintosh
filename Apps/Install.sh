@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo whoami 1&>/dev/null
+
 rm -rf ./dl
 mkdir ./dl
 
@@ -205,6 +207,13 @@ echo "Installinsg NodeJS with NVM..."
 nvm install node 1&>/dev/null
 nvm install 12.13.1 1&>/dev/null
 nvm alias default 12.13.1 1&>/dev/null
+
+# youtube-dl
+
+echo "Downloading and installing youtube-dl..."
+
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
 
 # .vimrc
 
