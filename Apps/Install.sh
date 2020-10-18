@@ -7,7 +7,7 @@ mkdir ./dl
 
 macOSVersion=$(sw_vers -productVersion)
 
-if [[ $macOSVersion =~ "10.15" ]]
+if [[ $macOSVersion =~ "10.15" || $macOSVersion =~ "11.0" ]]
 then
 	profile="$HOME/.zprofile"
 	systemAppsFolder="/System/Applications"
