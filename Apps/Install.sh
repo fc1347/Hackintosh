@@ -119,7 +119,7 @@ curl -L https://go.microsoft.com/fwlink/?LinkID=620882 -o ./dl/VSCode-darwin-sta
 unzip -qq ./dl/VSCode-darwin-stable.zip -d /Applications/
 
 mkdir -p ~/Library/Application\ Support/Code/User
-cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+cp ./settings/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 cat << EOF >> $profile
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
@@ -134,6 +134,8 @@ echo "Downloading and installing iTerm2..."
 curl -L https://iterm2.com/downloads/stable/latest -o ./dl/iTerm2.zip 1&>/dev/null
 
 unzip -qq ./dl/iTerm2.zip -d /Applications
+
+cp ./settings/iterm/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
 defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/iTerm.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 

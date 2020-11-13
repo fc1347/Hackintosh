@@ -1,0 +1,9 @@
+{
+	"editor.renderWhitespace": "all",
+	"files.hotExit": "off",
+	"window.restoreWindows": "none",
+	"workbench.activityBar.visible": false,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": true
+	}
+}

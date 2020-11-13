@@ -1,7 +1,0 @@
-{
-    "editor.renderWhitespace": "all",
-    "editor.detectIndentation": false,
-    "editor.insertSpaces": false,
-    "files.hotExit": "off",
-    "window.restoreWindows": "none"
-}
