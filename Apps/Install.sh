@@ -28,7 +28,6 @@ kill -9 $(pgrep Discord) 2&>/dev/null
 kill -9 $(pgrep iTerm2) 2&>/dev/null
 kill -9 $(pgrep Slack) 2&>/dev/null
 kill -9 $(pgrep Docker) 2&>/dev/null
-kill -9 $(pgrep eqMac2) 2&>/dev/null
 kill -9 $(pgrep Steam) 2&>/dev/null
 kill -9 $(pgrep Rectangle) 2&>/dev/null
 kill -9 $(pgrep Code) 2&>/dev/null
@@ -41,7 +40,6 @@ rm -rf /Applications/Slack.app
 rm -rf /Applications/Visual\ Studio\ Code.app
 rm -rf /Applications/Rectangle.app
 rm -rf /Applications/Steam.app
-rm -rf /Applications/eqMac2.app
 rm -rf /Applications/The\ Unarchiver.app
 rm -rf /Applications/Docker.app
 rm -rf /Applications/Spotify.app
@@ -159,15 +157,6 @@ hdiutil attach ./dl/Rectangle.dmg -quiet
 cp -r /Volumes/Rectangle*/Rectangle.app /Applications
 hdiutil detach /Volumes/Rectangle* -quiet
 open /Applications/Rectangle.app
-
-# eqMac2
-
-echo "Downloading and installing eqMac2..."
-
-hdiutil attach ./dmg/eqMac2.dmg -quiet
-cp -r /Volumes/eqMac2/eqMac2.app /Applications
-hdiutil detach /Volumes/eqMac2 -quiet
-open /Applications/eqMac2.app
 
 # Docker
 

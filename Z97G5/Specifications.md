@@ -1,2 +1,0 @@
-MSI Z97 Gaming 5
-i5-4690K 3.5 Ghz
