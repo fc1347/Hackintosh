@@ -9,7 +9,7 @@ This repository contains my EFI folders and bootloaders configurations to boot m
 ### Specifications :
 
 - Motherboard : MSI Z97 Gaming 5
-- CPU : i5-4690k
+- CPU : Intel Core i5-4690k
 - GPU : Intel HD Graphics 4600
 
 ### Bios settings :
@@ -28,10 +28,10 @@ This repository contains my EFI folders and bootloaders configurations to boot m
 
 ### Specifications :
 
-- CPU : i7-8550U
+- CPU : Intel Core i7-8550U
 - GPU : Intel HD Graphics 620
 
-# Credits
+## Credits
 
 - [OpenCore Bootloader](https://github.com/acidanthera/OpenCorePkg)
 - [Clover Bootloader](https://github.com/CloverHackyColor/CloverBootloader)
